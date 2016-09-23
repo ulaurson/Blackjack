@@ -1,0 +1,16 @@
+subprojects {
+    apply plugin: "java"
+    apply plugin: "eclipse"
+    apply plugin: "idea"
+
+    repositories {
+        mavenCentral()
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    configurations.all {
+        exclude group: "commons-logging", module: "commons-logging"
+    }
+}

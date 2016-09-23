@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+}
+
+
+apply plugin: "spring-boot"
+
+jar {
+    baseName = 'blackjackClient'
+}
+
+dependencies {
+
+    compile("org.springframework.boot:spring-boot-starter-web"){
+        exclude module: "spring-boot-starter-tomcat"
+    }
+
+    compile("org.json:json:20140107")
+
+    compile("org.slf4j:jcl-over-slf4j:1.7.21");
+}
